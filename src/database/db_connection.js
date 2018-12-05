@@ -4,7 +4,7 @@ const url = require('url');
 const env = require('env2');
 env('./config.env');
 
-if(!process.env.DATABASE_URL) {
+if (!process.env.DATABASE_URL) {
   throw new Error('Environment variable DATABASE_URL must be set');
 }
 
@@ -19,9 +19,13 @@ const options = {
   max: process.env.DB_MAX_CONNECTIONS || 2
 };
 
-if (username) { options.user = username; }
-if (password) { options.password = password; }
+if (username) {
+  options.user = username;
+}
+if (password) {
+  options.password = password;
+}
 
-options.ssl = ( options.host !=='locahost' );
+options.ssl = options.host !== 'locahost';
 
 module.exports = new Pool(options);
