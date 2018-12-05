@@ -20,6 +20,22 @@ const homeHandler = response => {
   });
 };
 
+const publicHandler = (url, response) => {
+  const filepath = path.join(__dirname, "..", url);
+  readFile(filepath, (err, file) => {
+    if (err) return serverError(err, response);
+    const [, extension] = url.split(".");
+    const extensionType = {
+      html: "text/html",
+      css: "text/css",
+      js: "application/javascript",
+      ico: "image/x-icon"
+    };
+    response.writeHead(200, { "content-type": extensionType[extension] });
+    response.end(file);
+  });
+};
+
 const getUsersHandler = response => {
   getData((err, res) => {
     if (err) return serverError(err, response);
@@ -40,22 +56,6 @@ const postUserHandler = (request, response) => {
       if (err) return serverError(err, response);
       homeHandler(response);
     });
-  });
-};
-
-const publicHandler = (url, response) => {
-  const filepath = path.join(__dirname, "..", url);
-  readFile(filepath, (err, file) => {
-    if (err) return serverError(err, response);
-    const [, extension] = url.split(".");
-    const extensionType = {
-      html: "text/html",
-      css: "text/css",
-      js: "application/javascript",
-      ico: "image/x-icon"
-    };
-    response.writeHead(200, { "content-type": extensionType[extension] });
-    response.end(file);
   });
 };
 
