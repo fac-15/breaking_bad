@@ -3,7 +3,7 @@ BEGIN;
 DROP TABLE IF EXISTS people, lunch, bookings;
 
 CREATE TABLE IF NOT EXISTS people (
-  people_id    SERIAL   PRIMARY KEY,
+  id    SERIAL   PRIMARY KEY,
   first_name   TINYTEXT     NOT NULL,
   last_name    TINYTEXT     NOT NULL,
   organisation TEXT,
@@ -11,16 +11,16 @@ CREATE TABLE IF NOT EXISTS people (
 )
 
 CREATE TABLE IF NOT EXISTS bookings (
-  booking_id   SERIAL   PRIMARY KEY,
-  lunch_id     INTEGER,
-  people_id    INTEGER,
+  id   SERIAL   PRIMARY KEY,
+  lunch_id     INTEGER REFERENCES lunch (lunch_id) NOT NULL,
+  people_id    INTEGER REFERENCES people (people_id) NOT NULL,
   paid BOOLEAN
 )
 
 CREATE TABLE IF NOT EXISTS lunch (
-  lunch_id   SERIAL   PRIMARY KEY,
+  id   SERIAL   PRIMARY KEY,
   cuisine    TEXT     NOT NULL,
-  dates      DATE
+  dates      DATE     NOT NULL
 )
 
 INSERT INTO lunch (cuisine, dates) VALUES('Ethopian', '2018-12-12');
