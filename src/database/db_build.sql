@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS people (
 
 CREATE TABLE IF NOT EXISTS bookings (
   id   SERIAL   PRIMARY KEY,
-  lunch_id     INTEGER REFERENCES lunch (lunch_id) NOT NULL,
-  people_id    INTEGER REFERENCES people (people_id) NOT NULL,
+  lunch_id     INTEGER REFERENCES lunch (id) NOT NULL,
+  people_id    INTEGER REFERENCES people (id) NOT NULL,
   paid BOOLEAN
 )
 
