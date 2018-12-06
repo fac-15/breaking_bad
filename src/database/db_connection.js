@@ -5,6 +5,8 @@ const env = require("env2");
 env("./config.env");
 
 let DATABASE_URL = process.env.DATABASE_URL;
+
+//check this line if database tests are not working!
 if (process.env.NODE_ENV === "test") {
   DATABASE_URL = process.env.TEST_DB_URL;
 }
@@ -13,7 +15,8 @@ if (!DATABASE_URL) {
   throw new Error("Environment variable DATABASE_URL must be set");
 }
 
-const params = url.parse(process.env.DATABASE_URL);
+const params = url.parse(DATABASE_URL);
+
 const [username, password] = params.auth.split(":");
 
 const options = {
