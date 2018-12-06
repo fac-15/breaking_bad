@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS people (
 CREATE TABLE IF NOT EXISTS lunch (
   id   SERIAL   PRIMARY KEY,
   cuisine    TEXT     NOT NULL,
-  dates      DATE     NOT NULL
+  dates      DATE
 );
 
 CREATE TABLE IF NOT EXISTS bookings (
@@ -23,8 +23,8 @@ CREATE TABLE IF NOT EXISTS bookings (
   paid BOOLEAN
 );
 
-INSERT INTO lunch (cuisine, dates) VALUES('Ethopian', '2018-12-12');
-INSERT INTO lunch (cuisine, dates) VALUES('Turkish', '2018-12-19');
-INSERT INTO lunch (cuisine, dates) VALUES('Lebanese', '2018-12-26');
+INSERT INTO lunch (cuisine, dates) VALUES('Ethopian', to_date('20181212', 'YYYYMMDD'));
+INSERT INTO lunch (cuisine, dates) VALUES('Turkish', to_date('20181219', 'YYYYMMDD'));
+INSERT INTO lunch (cuisine, dates) VALUES('Lebanese', to_date('20181226', 'YYYYMMDD'));
 
 COMMIT;
