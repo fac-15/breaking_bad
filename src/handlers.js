@@ -37,6 +37,7 @@ const publicHandler = (url, response) => {
 };
 
 const getUsersHandler = response => {
+  console.log('IM WORKING getUsersHandler');
   getData((err, res) => {
     if (err) return serverError(err, response);
     let data = JSON.stringify(res);
@@ -46,6 +47,7 @@ const getUsersHandler = response => {
 };
 
 const postUserHandler = (request, response) => {
+  console.log('IM WORKING postUserHandler');
   let data = "";
   request.on("data", chunk => {
     data += chunk;
