@@ -13,6 +13,44 @@
     <header>
       <h1>Breaking Bread</h1>
     </header>
+
+    <form id="form" action="index.html" method="post">
+      <h2>Coming for lunch?</h2>
+
+      <div class='tab'>Name:
+        <p><input placeholder="First name..." oninput="this.className = ''"></p>
+        <p><input placeholder="Last name..." oninput="this.className = ''"></p>
+      </div>
+
+      <div class='tab'>Contact:
+        <p><input placeholder="Organisation..." oninput="this.className = ''"></p>
+        <p><input placeholder="Phone number..." oninput="this.className = ''"></p>
+      </div>
+
+      <div class='tab'>Date of booking:
+        <p><input placeholder="Date..." oninput="this.className = ''"></p>
+      </div>
+
+      <div class='tab'>Have you paid?
+        <br>
+        <input type="radio" name="paid" value="paid" checked>Yes<br>
+        <input type="radio" name="not-paid" value="not-paid">No<br>
+      </div>
+
+      <div style="overflow:auto;">
+        <div style="float:right;">
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+    </form>
   </main>
 
 
