@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS people (
   first_name   TEXT     NOT NULL,
   last_name    TEXT     NOT NULL,
   organisation TEXT,
-  student BOOLEAN
+  -- student BOOLEAN
 );
 
 CREATE TABLE IF NOT EXISTS lunch (
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS bookings (
   id   SERIAL   PRIMARY KEY,
   lunch_id     INTEGER REFERENCES lunch (id) NOT NULL,
   people_id    INTEGER REFERENCES people (id) NOT NULL,
-  paid BOOLEAN
+  paid TEXT NOT NULL
 );
 
 INSERT INTO lunch (cuisine, dates) VALUES('Ethopian', '2018-12-12');
