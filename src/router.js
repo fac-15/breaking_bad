@@ -1,6 +1,6 @@
 const {
   homeHandler,
-  getUserHandler,
+  getUsersHandler,
   publicHandler,
   postUserHandler,
   errorHandler
@@ -11,7 +11,7 @@ const router = (request, response) => {
 
   if (url === "/") {
     homeHandler(response);
-  } else if (url === "people") {
+  } else if (url === "/people") {
     getUsersHandler(response);
   } else if (url === "/create-user") {
     postUserHandler(request, response);
