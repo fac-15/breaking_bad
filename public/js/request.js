@@ -1,4 +1,4 @@
-function requestData(inputVal, cb) {
+function requestData(method, url, cb) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -9,6 +9,6 @@ function requestData(inputVal, cb) {
       cb("error");
     }
   };
-  xhr.open("GET", `/search=${inputVal}`, true);
+  xhr.open(method, url, true);
   xhr.send();
 }
