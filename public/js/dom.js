@@ -1,23 +1,18 @@
-let submitButton = document.getElementById("submit");
 
-const domCallBack = response => {
-  // alert(fname, lname)
-  console.log("what is this?", response);
-};
+  const getLunch = (response) => {
 
-submitButton.addEventListener("click", function(e) {
-  preventDefault();
+    let dateDropDown = document.getElementById("date-select");
 
-  if (e.target.value) {
-    requestData(e.target.value, domCallBack);
+    response.forEach(function(lunch) {
+      let dataEntry = document.createElement("option");
+      let shortDate = lunch.dates.split('T')[0]
+      dataEntry.textContent = shortDate;
+      dateDropDown.appendChild(dataEntry);
+
+      console.log('result', shortDate)
+    });
   }
-});
-
-// fetchData(function(result) {
-//   console.log(result);
-// });
-
-// requestData(e.target.value, domCallBack);
+    requestData("GET", '/people', getLunch);
 
 // /*************************** CAROSEL AND FORM STYLING ***************************************************/
 //
