@@ -1,7 +1,7 @@
 const {
   homeHandler,
   getUserHandler,
-  publicHander,
+  publicHandler,
   postUserHandler,
   errorHandler
 } = require("./handlers");
@@ -16,7 +16,7 @@ const router = (request, response) => {
   } else if (url === "/create-user") {
     postUserHandler(request, response);
   } else if (url.includes("public")) {
-    publicHander(url, response);
+    publicHandler(url, response);
   } else {
     errorHandler(response);
   }
