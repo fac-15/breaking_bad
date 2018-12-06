@@ -1,6 +1,6 @@
 const dbConnection = require('../database/db_connection');
 const getData = (cb) => {
-  dbConnection.query('SELECT * FROM people', (err, res) => {
+  dbConnection.query('SELECT * FROM lunch', (err, res) => {
     if (err) return cb(err);
     cb(null, res.rows);
   });

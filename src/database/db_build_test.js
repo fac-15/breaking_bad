@@ -1,11 +1,10 @@
-const fs = require("fs");
-const path = require("path");
-const dbConnection = require("./db_connection.js");
+const fs = require('fs');
 
-const sqlPath = path.join(__dirname, "db_build_test.sql");
-const sql = fs.readFileSync(sqlPath).toString();
+const dbConnection = require('./db_connection.js');
 
-const runDbBuild = cb => {
+const sql = fs.readFileSync(`${__dirname}/db_build_test.sql`).toString();
+
+const runDbBuild = (cb) => {
   dbConnection.query(sql, cb);
 };
 
