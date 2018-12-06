@@ -14,25 +14,43 @@
       <h1>Breaking Bread</h1>
     </header>
 
-    <form id="form" action="index.html" method="post">
+    <form id="form" action="/create-user" method="post">
       <h2>Coming for lunch?</h2>
 
       <div class="tab" id="section-1">Who's joining us?
-        <p><input placeholder="First name..." oninput="this.className = ''"></p>
-        <p><input placeholder="Last name..." oninput="this.className = ''"></p>
+        <input  id="fname" type="text" name="fname" value="" placeholder="name">
+        <input  id="lname" type="text" name="lname" value="" placeholder="location">
+
+      </div>
+      <div class="tab" id="section-2">We'd like to know where you're visiting from.
+        <input id="org" type="text" name="org" value="" placeholder="Organisation">
       </div>
 
-      <div class="tab" id="section-2">We'd like to know where you're visiting from.
-        <p><input placeholder="Organisation..." oninput="this.className = ''"></p>
+      <!-- <div class="tab" id="section-3">Have you paid?
+        <br>
+      <input  id="pay" type="text" name="pay" value="" placeholder="yes/no">
+      </div> -->
+
+      <!-- <div class="tab" id="section-3">When would you like to Break Bread?
+        <select class="date-select" name="date">
+          <option value="">Pick a date</option>
+          <option value="">12th Dec 2018</option>
+          <option value="">19th Dec 2018</option>
+          <option value="">9th Jan 2019</option>
+        </select>
+      </div> -->
+
+      <!-- <div class="tab" id="section-2">We'd like to know where you're visiting from.
+        <p><input placeholder="Organisation..."></p>
       </div>
 
       <div class="tab" id="section-3">Or maybe you're a student?
         <br>
         <input type="radio" name="paid" value="paid" checked>Yes<br>
         <input type="radio" name="not-paid" value="not-paid">No<br>
-      </div>
+      </div> -->
 
-      <div class="tab" id="section-4">When would you like to Break Bread?
+      <!-- <div class="tab" id="section-4">When would you like to Break Bread?
         <select class="date-select" name="Pick a date">
           <option value="12th Dec 2018">Pick a date</option>
           <option value="12th Dec 2018">12th Dec 2018</option>
@@ -49,21 +67,23 @@
 
       <div class="tab" id="section-6">
         <h3>Thank you for registering, Time to Break Bread</h3>
-      </div>
-
-      <div style="overflow:auto;">
+        <button id="submit">Submit</button>
+      </div> -->
+<button id="submit">Submit</button>
+      <!-- <div style="overflow:auto;">
         <div style="float:right;">
           <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
           <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
         </div>
-      </div>
+      </div> -->
 
-      <div style="text-align:center;margin-top:40px;">
+      <!-- <div style="text-align:center;margin-top:40px;">
         <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
-      </div>
+        <span class="step"></span>
+      </div> -->
     </form>
   </main>
 
