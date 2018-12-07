@@ -1,90 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/public/css/normalize.css">
-    <link rel="stylesheet" href="/public/css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/x-ico" href="/favicon-cutlery.ico" />
+    <link rel="stylesheet" href="/public/css/normalize.css" />
+    <link rel="stylesheet" href="/public/css/styles.css" />
+
     <title>Breaking Bread</title>
-</head>
-<body>
-  <main>
-    <header>
-      <h1>Breaking Bread</h1>
-    </header>
+  </head>
+  <body>
+    <main>
+      <header><h1>Breaking Bread</h1></header>
 
-    <form id="form" action="/create-user" method="post">
-      <h2>Coming for lunch?</h2>
+      <form id="form" action="/create-user" method="post">
+        <h2>Coming for lunch?</h2>
 
-      <div class="tab" id="section-1">Who's joining us?
-        <input  id="fname" type="text" name="fname" value="" placeholder="name">
-        <input  id="lname" type="text" name="lname" value="" placeholder="location">
-
-      </div>
-      <div class="tab" id="section-2">We'd like to know where you're visiting from.
-        <input id="org" type="text" name="org" value="" placeholder="Organisation">
-      </div>
-
-      <div class="tab" id="section-3">When would you like to Break Bread?
-        <select class="dates-select" id="date-select" name="date">
-        </select>
-      </div>
-
-      <!-- <div class="tab" id="section-3">Have you paid?
-        <br>
-      <input  id="pay" type="text" name="pay" value="" placeholder="yes/no">
-      </div>
-
-      <div class="tab" id="section-2">We'd like to know where you're visiting from.
-        <p><input placeholder="Organisation..."></p>
-      </div>
-
-      <div class="tab" id="section-3">Or maybe you're a student?
-        <br>
-        <input type="radio" name="paid" value="paid" checked>Yes<br>
-        <input type="radio" name="not-paid" value="not-paid">No<br>
-      </div> -->
-
-      <!-- <div class="tab" id="section-4">When would you like to Break Bread?
-        <select class="date-select" name="Pick a date">
-          <option value="12th Dec 2018">Pick a date</option>
-          <option value="12th Dec 2018">12th Dec 2018</option>
-          <option value="19th Dec 2018">19th Dec 2018</option>
-          <option value="9th Jan 2019">9th Jan 2019</option>
-        </select>
-      </div>
-
-      <div class="tab" id="section-5">Have you paid?
-        <br>
-        <input type="radio" name="paid" value="paid" checked>Yes<br>
-        <input type="radio" name="not-paid" value="not-paid">No<br>
-      </div>
-
-      <div class="tab" id="section-6">
-        <h3>Thank you for registering, Time to Break Bread</h3>
-        <button id="submit">Submit</button>
-      </div> -->
-  <button id="submit">Submit</button>
-      <!-- <div style="overflow:auto;">
-        <div style="float:right;">
-          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        <div class="tab" id="section-1">
+          Who's joining us?
+          <input
+            id="fname"
+            type="text"
+            name="fname"
+            value=""
+            placeholder="name"
+          />
+          <input
+            id="lname"
+            type="text"
+            name="lname"
+            value=""
+            placeholder="location"
+          />
         </div>
-      </div> -->
+        <div class="tab" id="section-2">
+          We'd like to know where you're visiting from.
+          <input
+            id="org"
+            type="text"
+            name="org"
+            value=""
+            placeholder="Organisation"
+          />
+        </div>
 
-      <!-- <div style="text-align:center;margin-top:40px;">
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-      </div> -->
-    </form>
-  </main>
+        <div class="tab" id="section-3">
+          When would you like to Break Bread?
+          <select class="dates-select" id="date-select" name="date"> </select>
+        </div>
 
+        <!--
+          <div class="tab" id="section-3">Have you paid?
+            <br>
+          <input  id="pay" type="text" name="pay" value="" placeholder="yes/no">
+          </div>
 
-<script type="text/javascript" src="/public/js/request.js"></script>
-<script type="text/javascript" src="/public/js/dom.js"></script>
-</body>
+          <div class="tab" id="section-2">We'd like to know where you're visiting from.
+            <p><input placeholder="Organisation..."></p>
+          </div>
+
+          <div class="tab" id="section-3">Or maybe you're a student?
+            <br>
+            <input type="radio" name="paid" value="paid" checked>Yes<br>
+            <input type="radio" name="not-paid" value="not-paid">No<br>
+          </div>
+        -->
+
+        <!--
+          <div class="tab" id="section-4">When would you like to Break Bread?
+            <select class="date-select" name="Pick a date">
+              <option value="12th Dec 2018">Pick a date</option>
+              <option value="12th Dec 2018">12th Dec 2018</option>
+              <option value="19th Dec 2018">19th Dec 2018</option>
+              <option value="9th Jan 2019">9th Jan 2019</option>
+            </select>
+          </div>
+
+          <div class="tab" id="section-5">Have you paid?
+            <br>
+            <input type="radio" name="paid" value="paid" checked>Yes<br>
+            <input type="radio" name="not-paid" value="not-paid">No<br>
+          </div>
+
+          <div class="tab" id="section-6">
+            <h3>Thank you for registering, Time to Break Bread</h3>
+            <button id="submit">Submit</button>
+          </div>
+        -->
+        <button id="submit">Submit</button>
+        <!--
+          <div style="overflow:auto;">
+            <div style="float:right;">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+          </div>
+        -->
+
+        <!--
+          <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+          </div>
+        -->
+      </form>
+    </main>
+
+    <script type="text/javascript" src="/public/js/request.js"></script>
+    <script type="text/javascript" src="/public/js/dom.js"></script>
+  </body>
 </html>
