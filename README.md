@@ -22,7 +22,7 @@
 **1.** Decided on concept 🤨
 
 **2.** Created entity table relationship diagram/schema
-## --- :one: --- --- --- --- --- --- --- ♾ **MANY** ♾ --- --- --- --- --- --- --- :one: ---
+## &nbsp; &nbsp; &nbsp; --- :one: --- --- --- --- --- --- --- ♾ **MANY** ♾ --- --- --- --- --- --- --- :one: ---
 ![ENT Diagram](https://i.imgur.com/LUEL4P6.png)
 
 
