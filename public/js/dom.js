@@ -1,18 +1,18 @@
+const getLunch = (response) => {
+  let dateDropDown = document.getElementById('date-select');
 
-  const getLunch = (response) => {
+  response.forEach(function(lunch) {
+    let dataEntry = document.createElement('option');
+    let shortDate = lunch.dates.split('T')[0];
+    dataEntry.setAttribute('value', lunch.id);
+    dataEntry.setAttribute('id', lunch.id);
+    dataEntry.textContent = shortDate;
+    dateDropDown.appendChild(dataEntry);
 
-    let dateDropDown = document.getElementById("date-select");
-
-    response.forEach(function(lunch) {
-      let dataEntry = document.createElement("option");
-      let shortDate = lunch.dates.split('T')[0]
-      dataEntry.textContent = shortDate;
-      dateDropDown.appendChild(dataEntry);
-
-      console.log('result', shortDate)
-    });
-  }
-    requestData("GET", '/people', getLunch);
+    console.log('result', shortDate);
+  });
+};
+requestData('GET', '/people', getLunch);
 
 // /*************************** CAROSEL AND FORM STYLING ***************************************************/
 //
