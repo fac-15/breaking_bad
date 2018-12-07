@@ -7,7 +7,7 @@
 ## 💾 Instructions to run app
 1. In your terminal:
     ```git clone git@github.com:fac-15/breaking_bread.git```
-2. Make sure you are on the staging branch
+2. Make sure you are on the staging branch & ```npm i````
 3. Run server by typing ```npm run dev``` in your terminal
 4. Open up chrome and navigate to  ```http://localhost:5001```  
 5. Create a config.env file in the root directory and add key posted in Gitter.
