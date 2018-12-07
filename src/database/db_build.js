@@ -16,6 +16,6 @@ const buildDatabase = () => {
   });
 };
 
-// buildDatabase();
+buildDatabase();
 
 module.exports = buildDatabase;
