@@ -1,4 +1,4 @@
-# breaking_bread
+
 # 🥖 Breaking Bread :bread: 
 
 ![](https://media.giphy.com/media/VWYtDQMcYLRuw/giphy.gif)
@@ -7,10 +7,12 @@
 ## 💾 Instructions to run app
 1. In your terminal:
     ```git clone git@github.com:fac-15/breaking_bread.git```
+
 2. Make sure you are on the staging branch & ```npm i````
 3. Run server by typing ```npm run dev``` in your terminal
 4. Open up chrome and navigate to  ```http://localhost:5001```  
 5. Create a config.env file in the root directory and add key posted in Gitter.
+
 
 ## 📝 Planning:
 ![](https://lh3.googleusercontent.com/qCuGt3Jq6bsbi0v1XYC_PbcrF1974r6WvC1hBquWv3OO6GAW5dQ7Wb98310cg5Z8d8xvEIX6_LeCPzfcAdLlCTHWp6He0mPAvgKvYEk1EI74HCZaYupyG6rbA2BdFa_tqvIkYa6jz1wdV6o8ycHl459Xlni6D59bTLh9Y-9zjkeFQLGohdJ9TsYMxCz7tclhkKBGpzYHVg-alyKP_JmVaXxGziWQ2z-jRxue9vMsELak-JS33gOSsBNMAJSgtji-5eENLpGKSC5JUiibxb7QGCHbQvdtmR9CH7SNx5XhhPxY3madk0r03Q4GQWrMXF0P1jSU6Ro647djNbYfyZMfzJmju-MLbxUs4s9rXKoL2ct2Fw23An8xsaDffgyo2OSt-lcMkV4e8HYiZALEOmykuKKMvsQvzg7bLMn__n9EMXbcjzH1RD7RI3-tijccWI6e6SbRhi7rt_zHs6TpWD_fqtAnhm24biVJMcgCTxEF_2K8Pa9vQfHuBMxHUNIbawMBp-oPnzdngzfgatJUOnhF-0xl3R0DQWARrJt0YG1iYJPZjuTP_OXRtCf7Ac5LkDJgBcuk4mRH02KSvP0-k34jCY0NKynX5bRQh2BAWy74hmHB96fuhlxFjoAVrbojXTU0ORUfAbEKS8ibm6wisuU2mc96ew=w2444-h1374-no)
@@ -22,9 +24,9 @@
 **1.** Decided on concept 🤨
 
 **2.** Created entity table relationship diagram/schema
-## &nbsp; &nbsp; &nbsp; --- :one: --- --- --- --- --- --- --- ♾ **MANY** ♾ --- --- --- --- --- --- --- :one: ---
-![ENT Diagram](https://i.imgur.com/LUEL4P6.png)
 
+![ENT Diagram](https://i.imgur.com/LUEL4P6.png)
+# --- :one: --- --- --- --- --- ♾ **MANY** ♾ --- --- --- --- --- :one: ---
 
 **3.** :notebook: Set up file structure _(note that we have not yet added test files in this diagram)_;
 ![](https://i.imgur.com/TVPisHG.jpg)
