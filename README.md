@@ -22,8 +22,9 @@
 **1.** Decided on concept 🤨
 
 **2.** Created entity table relationship diagram/schema
+## --- :one: --- --- --- --- --- --- --- ♾ **MANY** ♾ --- --- --- --- --- --- --- :one: ---
 ![ENT Diagram](https://i.imgur.com/LUEL4P6.png)
-### --- :one: --- --- --- --- --- --- --- ♾ **MANY** ♾ --- --- --- --- --- --- --- :one: ---
+
 
 **3.** :notebook: Set up file structure _(note that we have not yet added test files in this diagram)_;
 ![](https://i.imgur.com/TVPisHG.jpg)
