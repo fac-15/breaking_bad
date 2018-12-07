@@ -54,6 +54,7 @@ const postUserHandler = (request, response) => {
   });
   request.on("end", () => {
     const { fname, lname, org, pay } = qs.parse(data);
+    console.log("f", fname, "l", lname, "org", org, "pay", pay);
 
     postData(fname, lname, org, pay, err => {
       if (err) return serverError(err, response);

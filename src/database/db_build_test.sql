@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS people, lunch, bookings;
+DROP TABLE IF EXISTS people, lunch, bookings CASCADE;
 
 CREATE TABLE IF NOT EXISTS people (
   id    SERIAL   PRIMARY KEY,
