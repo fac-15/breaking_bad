@@ -1,12 +1,12 @@
 BEGIN;
 
-DROP TABLE IF EXISTS people, lunch, bookings;
+DROP TABLE IF EXISTS people, lunch, bookings CASCADE;
 
 CREATE TABLE IF NOT EXISTS people (
   id    SERIAL   PRIMARY KEY,
   first_name   TEXT     NOT NULL,
   last_name    TEXT     NOT NULL,
-  organisation TEXT,
+  organisation TEXT
   -- student BOOLEAN
 );
 
