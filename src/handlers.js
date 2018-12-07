@@ -37,7 +37,7 @@ const publicHandler = (url, response) => {
 };
 
 const getUsersHandler = response => {
-  console.log('IM WORKING getUsersHandler');
+  console.log("IM WORKING getUsersHandler");
   getData((err, res) => {
     if (err) return serverError(err, response);
     let data = JSON.stringify(res);
@@ -47,16 +47,18 @@ const getUsersHandler = response => {
 };
 
 const postUserHandler = (request, response) => {
-  console.log('IM WORKING postUserHandler');
+  console.log("IM WORKING postUserHandler");
   let data = "";
   request.on("data", chunk => {
     data += chunk;
   });
   request.on("end", () => {
     const { fname, lname, org, pay } = qs.parse(data);
+
     postData(fname, lname, org, pay, err => {
       if (err) return serverError(err, response);
-      homeHandler(response);
+      response.writeHead(302, { Location: "/" });
+      response.end();
     });
   });
 };
