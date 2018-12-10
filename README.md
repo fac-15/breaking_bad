@@ -1,4 +1,3 @@
-
 # 🥖 Breaking Bread :bread: 
 
 ![](https://media.giphy.com/media/VWYtDQMcYLRuw/giphy.gif)
@@ -7,15 +6,13 @@
 ## 💾 Instructions to run app
 1. In your terminal:
     ```git clone git@github.com:fac-15/breaking_bread.git```
-
-2. Make sure you are on the staging branch & ```npm i````
+2. Make sure you are on the staging branch
 3. Run server by typing ```npm run dev``` in your terminal
-4. Open up chrome and navigate to  ```http://localhost:5001```  
-5. Create a config.env file in the root directory and add key posted in Gitter.
-
+4. Open up chrome and navigate to  ```http://localhost:5001```    
 
 ## 📝 Planning:
-![dsc_2221](https://user-images.githubusercontent.com/40594944/49656140-769c5380-fa34-11e8-8ad9-f772a7b908fa.JPG)
+![](https://lh3.googleusercontent.com/qCuGt3Jq6bsbi0v1XYC_PbcrF1974r6WvC1hBquWv3OO6GAW5dQ7Wb98310cg5Z8d8xvEIX6_LeCPzfcAdLlCTHWp6He0mPAvgKvYEk1EI74HCZaYupyG6rbA2BdFa_tqvIkYa6jz1wdV6o8ycHl459Xlni6D59bTLh9Y-9zjkeFQLGohdJ9TsYMxCz7tclhkKBGpzYHVg-alyKP_JmVaXxGziWQ2z-jRxue9vMsELak-JS33gOSsBNMAJSgtji-5eENLpGKSC5JUiibxb7QGCHbQvdtmR9CH7SNx5XhhPxY3madk0r03Q4GQWrMXF0P1jSU6Ro647djNbYfyZMfzJmju-MLbxUs4s9rXKoL2ct2Fw23An8xsaDffgyo2OSt-lcMkV4e8HYiZALEOmykuKKMvsQvzg7bLMn__n9EMXbcjzH1RD7RI3-tijccWI6e6SbRhi7rt_zHs6TpWD_fqtAnhm24biVJMcgCTxEF_2K8Pa9vQfHuBMxHUNIbawMBp-oPnzdngzfgatJUOnhF-0xl3R0DQWARrJt0YG1iYJPZjuTP_OXRtCf7Ac5LkDJgBcuk4mRH02KSvP0-k34jCY0NKynX5bRQh2BAWy74hmHB96fuhlxFjoAVrbojXTU0ORUfAbEKS8ibm6wisuU2mc96ew=w2444-h1374-no)
+
 
 
 ## :clipboard:Process 
@@ -23,7 +20,6 @@
 **1.** Decided on concept 🤨
 
 **2.** Created entity table relationship diagram/schema
-
 ![ENT Diagram](https://i.imgur.com/LUEL4P6.png)
 # --- :one: --- --- --- --- --- ♾ **MANY** ♾ --- --- --- --- --- :one: ---
 
@@ -48,7 +44,53 @@
 * We also ran into trouble testing the date format as it would print the date,time & time zone.
 * Our XMLhtml response request did not return data from our databases
 * Linking our databases together to auto populate the FK columns according to primary key (foreign key)
-* 
+
+
+## Accomplishment
+
+We were able to popluate our booking table with a people id & if a person has paid or not by using the data from the people's table and the connected (PK FK)
+
+```javascript const dbConnection = require("../database/db_connection");
+const postData = (fname, lname, org, pay) => {
+  dbConnection.query(
+    "INSERT INTO people (first_name, last_name, organisation) VALUES ($1, $2, $3) RETURNING id",
+    [fname, lname, org],
+    (err, peopleRes) => {
+      if (err) return err;
+      dbConnection.query(
+        "INSERT INTO bookings (lunch_id, people_id, paid) VALUES ($1, $2, $3)",
+        [1, peopleRes.rows[0].id, pay],
+        err => {
+          console.log("am i working");
+          if (err) return err;
+        }
+      );
+    }
+  );
+};
+
+
+
+const postUserHandler = (request, response) => {
+  console.log("IM WORKING postUserHandler");
+  let data = "";
+  request.on("data", chunk => {
+    data += chunk;
+  });
+  request.on("end", () => {
+    const { fname, lname, org, pay } = qs.parse(data);
+    console.log("f", fname, "l", lname, "org", org, "pay", pay);
+
+    postData(fname, lname, org, pay, err => {
+      if (err) return serverError(err, response);
+      response.writeHead(302, { Location: "/" });
+      response.end();
+    });
+  });
+};
+```
+![](https://i.imgur.com/BSZa8nE.png)
+
 
 
 ## 💬 Stretch goals: 
