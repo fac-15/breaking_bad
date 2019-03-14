@@ -1,5 +1,6 @@
 
 # 🥖 Breaking Bread :bread: 
+> Created by: @onwordi @teenie-quaggard @jcharnley @lucyewright
 
 ![](https://media.giphy.com/media/VWYtDQMcYLRuw/giphy.gif)
 ### An app to help organise Wednesday's community lunch at Space4!
